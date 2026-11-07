@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  overflow: hidden;
+}
+
+.landing,
+.landing__frame {
+  display: block;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+}
+
+.landing__frame {
+  border: 0;
+}

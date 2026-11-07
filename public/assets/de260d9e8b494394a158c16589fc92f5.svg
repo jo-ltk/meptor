@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1150" viewBox="0 0 1600 1150" font-family="Helvetica Neue, Helvetica, Arial, sans-serif">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9dbcc0"></stop><stop offset=".55" stop-color="#6f969c"></stop><stop offset="1" stop-color="#3f656b"></stop></linearGradient>
+<pattern id="p" width="92.0" height="92.0" patternUnits="userSpaceOnUse"><path d="M92.0 0H0V92.0" fill="none" stroke="#ffffff" stroke-opacity=".08" stroke-width="1.725"></path></pattern>
+<radialGradient id="r" cx=".5" cy=".42" r=".6"><stop offset="0" stop-color="#ffffff" stop-opacity=".22"></stop><stop offset="1" stop-color="#ffffff" stop-opacity="0"></stop></radialGradient></defs>
+<rect width="1600" height="1150" fill="url(#g)"></rect><rect width="1600" height="1150" fill="url(#p)"></rect><rect width="1600" height="1150" fill="url(#r)"></rect>
+<rect x="23.0" y="23.0" width="1554.0" height="1104.0" rx="23.0" fill="none" stroke="#ffffff" stroke-opacity=".35" stroke-width="3.45" stroke-dasharray="23.0 16.1"></rect>
+<rect x="748.25" y="391.69" width="103.5" height="80.73" rx="14.490000000000002" fill="none" stroke="#ffffff" stroke-opacity=".85" stroke-width="6.9"></rect>
+<circle cx="800.0" cy="435.15999999999997" r="18.63" fill="none" stroke="#ffffff" stroke-opacity=".85" stroke-width="6.9"></circle>
+<rect x="812.42" y="381.34" width="22.77" height="12.42" rx="3.105" fill="#ffffff" fill-opacity=".85"></rect>
+<text x="800.0" y="538.66" text-anchor="middle" font-size="27.6" font-weight="600" letter-spacing="4.416" fill="#ffffff" fill-opacity=".8">INSIGHT 01 · LEAD</text>
+<text x="800.0" y="624.91" text-anchor="middle" font-size="57.5" font-weight="500" letter-spacing="-1.1500000000000001" fill="#ffffff">Hiring panel or recruiter</text>
+<text x="800.0" y="695.06" text-anchor="middle" font-size="57.5" font-weight="500" letter-spacing="-1.1500000000000001" fill="#ffffff">reviewing resumes</text>
+<text x="800.0" y="787.9799999999999" text-anchor="middle" font-size="25.299999999999997" font-weight="500" letter-spacing="1.5179999999999998" fill="#ffffff" fill-opacity=".7">Landscape · min 1600 × 1150 px</text>
+</svg>
