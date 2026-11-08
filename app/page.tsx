@@ -1,5 +1,6 @@
 import MotionRoot from "@/components/MotionRoot";
 import Nav from "@/components/Nav";
+import WhatsAppFab from "@/components/WhatsAppFab";
 import Overlays from "@/components/sections/Overlays";
 import Hero from "@/components/sections/Hero";
 import Trust from "@/components/sections/Trust";
@@ -31,6 +32,7 @@ export default function Home() {
         <Cta />
       </main>
       <Footer />
+      <WhatsAppFab />
     </MotionRoot>
   );
 }

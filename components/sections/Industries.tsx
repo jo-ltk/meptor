@@ -1,6 +1,18 @@
 import type React from "react";
 
 /* phones get their own compact 2-column grid (the desktop deck is hidden ≤900px) */
+/* same photos as the desktop deck, sized for the small mobile cards */
+const MOBILE_IMG = [
+  "https://images.unsplash.com/photo-1629904853893-c2c8981a1dc5?auto=format&fit=crop&w=600&h=700&q=70",
+  "https://images.unsplash.com/photo-1753161617988-c5f43e441621?auto=format&fit=crop&w=600&h=700&q=70",
+  "https://images.unsplash.com/photo-1758691462878-6edc3d3da1be?auto=format&fit=crop&w=600&h=700&q=70",
+  "https://images.unsplash.com/photo-1761195696590-3490ea770aa1?auto=format&fit=crop&w=600&h=700&q=70",
+  "https://images.unsplash.com/photo-1724230758718-406bab979e67?auto=format&fit=crop&w=600&h=700&q=70",
+  "https://images.unsplash.com/photo-1787647559180-a26acde70c2e?auto=format&fit=crop&w=600&h=700&q=70",
+  "https://images.unsplash.com/photo-1758270703928-6a8597669abc?auto=format&fit=crop&w=600&h=700&q=70",
+  "https://images.unsplash.com/photo-1651467606797-e1c660cf3fda?auto=format&fit=crop&w=600&h=700&q=70",
+];
+
 const MOBILE: { t: string; ic: React.ReactNode }[] = [
   { t: "IT & Technology", ic: <><path d="M10 12L24 24L38 10M24 24L16 38M24 24L36 34" /><circle cx="10" cy="12" r="3" /><circle cx="38" cy="10" r="3" /><circle cx="24" cy="24" r="4" /><circle cx="16" cy="38" r="3" /><circle cx="36" cy="34" r="3" /></> },
   { t: "Retail & FMCG", ic: <><path d="M11 17h26l-2.5 23h-21z" /><path d="M18 17v-3a6 6 0 0 1 12 0v3" /></> },
@@ -46,8 +58,8 @@ export default function Industries() {
             <article className="dkc on" data-ind="0">
               <img
                 decoding="async"
-                src="/images/placeholders/ind-1.svg"
-                alt="Developers in a modern tech office"
+                src="https://images.unsplash.com/photo-1629904853893-c2c8981a1dc5?auto=format&fit=crop&w=1600&q=80"
+                alt="Developers working on code in a bright tech office"
               />
               <span className="dk-bar" aria-hidden="true">
                 <i />
@@ -118,8 +130,8 @@ export default function Industries() {
             <article className="dkc" data-ind="1">
               <img
                 decoding="async"
-                src="/images/placeholders/ind-2.svg"
-                alt="Retail store team"
+                src="https://images.unsplash.com/photo-1753161617988-c5f43e441621?auto=format&fit=crop&w=1600&q=80"
+                alt="Retail associate helping a customer choose clothes"
               />
               <span className="dk-bar" aria-hidden="true">
                 <i />
@@ -182,8 +194,8 @@ export default function Industries() {
             <article className="dkc" data-ind="2">
               <img
                 decoding="async"
-                src="/images/placeholders/ind-3.svg"
-                alt="Doctor or nurse in a bright clinic"
+                src="https://images.unsplash.com/photo-1758691462878-6edc3d3da1be?auto=format&fit=crop&w=1600&q=80"
+                alt="Doctor consulting a patient in a clinic"
               />
               <span className="dk-bar" aria-hidden="true">
                 <i />
@@ -246,8 +258,8 @@ export default function Industries() {
             <article className="dkc" data-ind="3">
               <img
                 decoding="async"
-                src="/images/placeholders/ind-4.svg"
-                alt="Factory workers in safety gear"
+                src="https://images.unsplash.com/photo-1761195696590-3490ea770aa1?auto=format&fit=crop&w=1400&q=60"
+                alt="Factory team inspecting an automated production line"
               />
               <span className="dk-bar" aria-hidden="true">
                 <i />
@@ -312,8 +324,8 @@ export default function Industries() {
             <article className="dkc" data-ind="4">
               <img
                 decoding="async"
-                src="/images/placeholders/ind-5.svg"
-                alt="Hotel receptionist or restaurant staff"
+                src="https://images.unsplash.com/photo-1724230758718-406bab979e67?auto=format&fit=crop&w=1600&q=80"
+                alt="Hospitality host at a restaurant front desk"
               />
               <span className="dk-bar" aria-hidden="true">
                 <i />
@@ -374,8 +386,8 @@ export default function Industries() {
             <article className="dkc" data-ind="5">
               <img
                 decoding="async"
-                src="/images/placeholders/ind-6.svg"
-                alt="Young startup team in a casual office"
+                src="https://images.unsplash.com/photo-1787647559180-a26acde70c2e?auto=format&fit=crop&w=1600&q=80"
+                alt="Startup team collaborating in a colourful modern office"
               />
               <span className="dk-bar" aria-hidden="true">
                 <i />
@@ -436,8 +448,8 @@ export default function Industries() {
             <article className="dkc" data-ind="6">
               <img
                 decoding="async"
-                src="/images/placeholders/ind-7.svg"
-                alt="Teacher with students in a classroom"
+                src="https://images.unsplash.com/photo-1758270703928-6a8597669abc?auto=format&fit=crop&w=1600&q=80"
+                alt="Teacher instructing students in a classroom"
               />
               <span className="dk-bar" aria-hidden="true">
                 <i />
@@ -499,8 +511,8 @@ export default function Industries() {
             <article className="dkc" data-ind="7">
               <img
                 decoding="async"
-                src="/images/placeholders/ind-8.svg"
-                alt="Dubai or Doha skyline, or a Gulf office"
+                src="https://images.unsplash.com/photo-1651467606797-e1c660cf3fda?auto=format&fit=crop&w=1600&q=80"
+                alt="Downtown Dubai skyline with the Burj Khalifa"
               />
               <span className="dk-bar" aria-hidden="true">
                 <i />
@@ -564,6 +576,7 @@ export default function Industries() {
           <ul className="ind-m">
             {MOBILE.map(({ t, ic }, i) => (
               <li className="im-card" key={t}>
+                <img className="im-img" src={MOBILE_IMG[i]} alt="" loading="lazy" decoding="async" />
                 <span className="im-n">{String(i + 1).padStart(2, "0")}</span>
                 <span className="im-ic" aria-hidden="true">
                   <svg viewBox="0 0 48 48" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">

@@ -8,7 +8,7 @@ export default function Cta() {
         <div className="cta-f">
           <img
             decoding="async"
-            src="/images/placeholders/cta.svg"
+            src="https://images.unsplash.com/photo-1774953037913-af0cf688491a?auto=format&fit=crop&w=2400&q=80"
             alt=""
             className="parf"
           />

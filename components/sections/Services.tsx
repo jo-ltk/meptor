@@ -41,8 +41,8 @@ export default function Services() {
               <article className="card">
                 <img
                   decoding="async"
-                  src="/images/placeholders/svc-1.svg"
-                  alt="Hands signing documents or a contract"
+                  src="https://images.unsplash.com/photo-1792488954259-3f886ed03cab?auto=format&fit=crop&w=1000&q=80"
+                  alt="Professional signing a contract at a glass desk"
                 />
                 <div className="c-top">
                   <span className="c-n">01</span>
@@ -88,8 +88,8 @@ export default function Services() {
               <article className="card">
                 <img
                   decoding="async"
-                  src="/images/placeholders/svc-2.svg"
-                  alt="Trainer leading a workshop"
+                  src="https://images.unsplash.com/photo-1776039230119-6e69e241512d?auto=format&fit=crop&w=1000&q=80"
+                  alt="Trainer presenting a workshop to an audience"
                 />
                 <div className="c-top">
                   <span className="c-n">02</span>
@@ -134,8 +134,8 @@ export default function Services() {
               <article className="card">
                 <img
                   decoding="async"
-                  src="/images/placeholders/svc-3.svg"
-                  alt="Manager in a one-on-one review"
+                  src="https://images.unsplash.com/photo-1758518730162-09a142505bfd?auto=format&fit=crop&w=1000&q=80"
+                  alt="Manager holding a one-on-one review with an employee"
                 />
                 <div className="c-top">
                   <span className="c-n">03</span>
@@ -179,8 +179,8 @@ export default function Services() {
               <article className="card">
                 <img
                   decoding="async"
-                  src="/images/placeholders/svc-4.svg"
-                  alt="Laptop with spreadsheets on a clean desk"
+                  src="https://images.unsplash.com/photo-1772588627354-ca3617853217?auto=format&fit=crop&w=1000&q=80"
+                  alt="Payroll forms with a calculator and pen on a desk"
                 />
                 <div className="c-top">
                   <span className="c-n">04</span>
@@ -224,8 +224,8 @@ export default function Services() {
               <article className="card">
                 <img
                   decoding="async"
-                  src="/images/placeholders/svc-5.svg"
-                  alt="Recruiter interviewing a candidate"
+                  src="https://images.unsplash.com/photo-1758520144437-f068ecaf0d83?auto=format&fit=crop&w=1000&q=80"
+                  alt="Recruiter interviewing a candidate at an office desk"
                 />
                 <div className="c-top">
                   <span className="c-n">05</span>
@@ -270,8 +270,8 @@ export default function Services() {
               <article className="card">
                 <img
                   decoding="async"
-                  src="/images/placeholders/svc-6.svg"
-                  alt="New hire welcomed at their desk"
+                  src="/images/photos/onboarding-lounge.jpg"
+                  alt="New colleagues chatting in a bright modern office lounge"
                 />
                 <div className="c-top">
                   <span className="c-n">06</span>
@@ -314,8 +314,23 @@ export default function Services() {
               </article>
             </div>
           </div>
-          <div className="svc-dots" aria-hidden="true">
-            <i />
+          <div className="svc-dots cpg" aria-hidden="true">
+            <span className="cpg-n">
+              <span className="cpg-roll">
+                <b>01</b>
+              </span>
+              <span className="cpg-t">/06</span>
+            </span>
+            <span className="cpg-r">
+              <span className="cpg-lbl">Compliance &amp; Legal Services</span>
+              <span className="cpg-segs">
+                {Array.from({ length: 6 }, (_, i) => (
+                  <i key={i}>
+                    <b />
+                  </i>
+                ))}
+              </span>
+            </span>
           </div>
         </div>
       </section>

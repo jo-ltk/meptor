@@ -64,8 +64,8 @@ export default function Insights() {
               >
                 <img
                   decoding="async"
-                  src="/images/placeholders/ins-1.svg"
-                  alt="Hiring panel reviewing resumes"
+                  src="https://images.unsplash.com/photo-1758518730264-9235a1e5416b?auto=format&fit=crop&w=1800&q=80"
+                  alt="Recruiter reviewing a resume with a candidate"
                 />
               </a>
               <p className="meta">
@@ -107,8 +107,8 @@ export default function Insights() {
               >
                 <img
                   decoding="async"
-                  src="/images/placeholders/ins-2.svg"
-                  alt="Remote video call between India and Gulf teams"
+                  src="/images/photos/remote-call.jpg"
+                  alt="Professional smiling during a remote video call"
                 />
               </a>
               <p className="meta">
@@ -150,8 +150,8 @@ export default function Insights() {
               >
                 <img
                   decoding="async"
-                  src="/images/placeholders/ins-3.svg"
-                  alt="Employee handbook or policy documents on a desk"
+                  src="https://images.unsplash.com/photo-1773332598413-a6d5279d1ae8?auto=format&fit=crop&w=1000&q=80"
+                  alt="Laptop and policy documents on a wooden desk"
                 />
               </a>
               <p className="meta">
@@ -186,8 +186,23 @@ export default function Insights() {
               </a>
             </article>
           </div>
-          <div className="ins-dots" aria-hidden="true">
-            <i />
+          <div className="ins-dots cpg" aria-hidden="true">
+            <span className="cpg-n">
+              <span className="cpg-roll">
+                <b>01</b>
+              </span>
+              <span className="cpg-t">/03</span>
+            </span>
+            <span className="cpg-r">
+              <span className="cpg-lbl">How to Reduce Recruitment Costs Without Compromising Hiring Quality</span>
+              <span className="cpg-segs">
+                {Array.from({ length: 3 }, (_, i) => (
+                  <i key={i}>
+                    <b />
+                  </i>
+                ))}
+              </span>
+            </span>
           </div>
         </div>
       </section>

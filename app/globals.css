@@ -319,11 +319,12 @@ transition:translate .6s var(--ease),box-shadow .6s var(--ease),background .6s v
 .cta{padding:0 12px 12px}
 .cta-f{position:relative;height:780px;border-radius:28px;overflow:hidden;display:grid;place-items:center;text-align:center;background:var(--g1)}
 .cta-f > img{position:absolute;left:0;top:-10%;width:100%;height:120%;object-fit:cover}
-.cta-f::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 60% at 50% 50%,rgba(255,255,255,.82),rgba(255,255,255,.35) 70%,rgba(255,255,255,.1))}
-.cta-in{position:relative;padding:0 24px}
-.cta .eb{justify-content:center}
-.cta h2{margin-top:28px;font-weight:400;font-size:clamp(46px,7vw,112px);line-height:.98;letter-spacing:-.05em}
-.cta-d{max-width:540px;margin:28px auto 0;font-size:18px;color:#31444a}
+.cta-f::before{content:"";position:absolute;inset:0;z-index:1;background:radial-gradient(70% 70% at 50% 50%,rgba(6,22,26,.72),rgba(6,22,26,.5) 70%,rgba(6,22,26,.38))}
+.cta-in{position:relative;z-index:2;padding:0 24px}
+.cta .eb{justify-content:center;color:rgba(255,255,255,.85)}
+.cta .eb::before{box-shadow:0 0 0 3px rgba(159,211,220,.25)}
+.cta h2{margin-top:28px;font-weight:500;font-size:clamp(46px,7vw,112px);line-height:.98;letter-spacing:-.05em;color:#fff;text-shadow:0 2px 24px rgba(0,0,0,.25)}
+.cta-d{max-width:540px;margin:28px auto 0;font-size:18px;color:rgba(255,255,255,.88)}
 .btns{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-top:40px}
 
 /* ── footer ── */
@@ -872,6 +873,15 @@ html.lenis,html.lenis body{height:auto}
   .im-t{margin-top:auto;padding-top:14px;max-width:11ch;font-weight:500;font-size:clamp(16px,4.7vw,20px);line-height:1.15;letter-spacing:-.025em}
   .im-t::before{content:"";display:block;width:18px;height:2px;margin-bottom:10px;border-radius:2px;background:var(--g3)}
 
+  /* photo cards: same images as the desktop deck, darkened at top and bottom so the number, icon and title stay legible */
+  .im-card,.im-card:nth-child(n){color:#fff;background:var(--g5);box-shadow:inset 0 0 0 1px rgba(255,255,255,.14),0 18px 32px -20px rgba(10,36,42,.65)}
+  .im-img{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover}
+  .im-card::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(6,17,20,.45) 0%,rgba(6,17,20,.05) 32%,rgba(6,17,20,.18) 55%,rgba(6,17,20,.82) 100%)}
+  .im-art{display:none}
+  .im-n{opacity:.9;text-shadow:0 1px 4px rgba(0,0,0,.35)}
+  .im-t{text-shadow:0 1px 10px rgba(0,0,0,.35)}
+  .im-card .im-ic,.im-card:nth-child(n) .im-ic{color:#fff;background:rgba(255,255,255,.16);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);box-shadow:inset 0 0 0 1px rgba(255,255,255,.35)}
+
   /* pillars: same 2-column grid instead of a sideways carousel */
   .why-pil,.mp .why-pil{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:44px 0 0;padding:0;overflow:visible;scroll-snap-type:none;touch-action:auto;cursor:auto}
   .why-dots{display:none !important}
@@ -908,3 +918,94 @@ html.lenis,html.lenis body{height:auto}
   .nav-bg{opacity:1}.nav{color:var(--ink)}
 }
 .mp.still *,.mp.still *::before,.mp.still *::after,.mp.still .why{animation:none !important}
+
+/* Desktop first view = hero + "trusted by" strip, exactly one screen tall.
+   The strip gets a fixed height so the hero can take the rest of the viewport. */
+@media (min-width: 901px) {
+  .mp{--trust-h:132px}
+  .hero-f{height:calc(100svh - 24px - var(--trust-h));min-height:640px}
+  .trust{box-sizing:border-box;height:var(--trust-h);padding:0;display:flex;align-items:center}
+  .trust .wrap{width:100%}
+}
+
+/* ═════════════ FLOATING WHATSAPP · green marble glass (matches the nav) ═════════════ */
+.wa-fab{position:fixed;right:clamp(16px,2.4vw,32px);bottom:clamp(16px,2.4vw,32px);z-index:90;display:grid;place-items:center;width:60px;height:60px;border-radius:22px;color:var(--g5);
+  background:url(/images/grain.png) 0 0 / 160px 160px,linear-gradient(180deg,rgba(236,247,249,.86),rgba(195,227,232,.74));
+  -webkit-backdrop-filter:blur(28px) saturate(140%);backdrop-filter:blur(28px) saturate(140%);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.7),0 0 0 1px rgba(43,99,107,.12),0 1px 2px rgba(13,25,28,.08),0 12px 28px -12px rgba(43,99,107,.45);
+  animation:fadeIn 1s ease 1.6s both;
+  transition:translate .5s var(--ease),box-shadow .6s var(--ease),color .4s var(--ease),border-radius .45s cubic-bezier(.34,1.56,.64,1),scale .45s cubic-bezier(.34,1.56,.64,1)}
+.wa-fab::before{content:"";position:absolute;inset:-6px;border-radius:28px;border:1px solid rgba(90,158,168,.35);opacity:0;animation:waPulse 3.2s var(--ease) 3s infinite;pointer-events:none}
+.wa-fab svg{position:relative;transition:transform .6s var(--ease)}
+.wa-fab:hover{translate:0 -2px;color:#1f4d53;box-shadow:inset 0 0 0 1px #fff,0 0 0 1px rgba(43,99,107,.16),0 2px 4px rgba(13,25,28,.08),0 18px 36px -14px rgba(43,99,107,.55)}
+.wa-fab:hover svg{transform:rotate(-8deg) scale(1.06)}
+.wa-fab:active{border-radius:14px;scale:.94}
+@keyframes waPulse{0%{opacity:.9;scale:.92}70%,100%{opacity:0;scale:1.18}}
+@media (max-width:900px){.wa-fab{width:54px;height:54px;border-radius:18px;right:16px;bottom:16px}.wa-fab svg{width:26px;height:26px}.wa-fab::before{border-radius:24px}}
+@media (prefers-reduced-motion: reduce){.wa-fab,.wa-fab::before{animation:none}.wa-fab::before{display:none}}
+
+/* ── about: fill the stat column with a compact "what we cover" list (desktop only) ── */
+@media (min-width:901px){.ab-stat{display:flex;flex-direction:column}}
+.ab-pts{margin-top:auto;padding-top:48px;max-width:340px}
+.ab-pts li{display:flex;align-items:baseline;gap:18px;padding:14px 0;border-top:1px solid var(--line);font-size:16px;letter-spacing:-.01em;color:var(--ink)}
+.ab-pts li span{font-size:11px;font-weight:500;letter-spacing:.08em;color:var(--g4);font-variant-numeric:tabular-nums}
+.ab-pts .ab-reg{justify-content:flex-start;border-bottom:1px solid var(--line);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink2)}
+.ab-pts .ab-reg::before{content:"";width:8px;height:8px;border-radius:2px;background:var(--g3);box-shadow:0 0 0 3px var(--g1);align-self:center}
+@media (max-width:900px){.ab-pts{display:none}}
+
+/* ── testimonials: portrait stretches to the full height of the quote column (no dead space below it) ── */
+@media (min-width:901px){
+  .tm .wrap{align-items:stretch}
+  .tm-img{height:auto;min-height:620px}
+}
+
+/* ── mobile hero: drop the "HR solutions that care" tag + scroll arrow, give the buttons room ── */
+@media (max-width:900px){
+  .hero-bar > span:first-child,.hero-bar a{display:none}
+  .hero-f{grid-template-rows:auto minmax(0,1fr) auto auto;padding-bottom:22px}
+  .hc-b{margin-top:6px}
+}
+
+/* ── mobile "why" pillars: calm tap-to-open list instead of a dense 2×2 grid ── */
+@media (max-width:900px){
+  .why-pil,.mp .why-pil{grid-template-columns:1fr;gap:10px}
+  .pil,.pil:nth-child(n){display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;column-gap:14px;row-gap:0;padding:16px 16px 16px 14px;border-radius:20px;cursor:pointer;-webkit-tap-highlight-color:transparent;
+    transition:background .5s var(--ease),box-shadow .5s var(--ease),scale .25s var(--ease)}
+  .pil svg{grid-column:1;grid-row:1;width:40px;height:40px;padding:8px;border-radius:12px;background:rgba(159,211,220,.08);box-shadow:inset 0 0 0 1px rgba(159,211,220,.16);transition:background .5s var(--ease),color .5s}
+  .pil h3,.pil h3:nth-child(n){grid-column:2;grid-row:1;margin:0;font-size:17px;line-height:1.2}
+  .pil .pi{position:static;grid-column:3;grid-row:1;display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.06em}
+  .pil .pi::after{content:"";width:9px;height:9px;margin-top:-4px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;rotate:45deg;transition:rotate .5s var(--ease),margin .5s var(--ease)}
+  .pil p{grid-column:1 / -1;grid-row:2;max-height:160px;overflow:hidden;padding:14px 0 2px 54px;font-size:14px;line-height:1.55;transition:max-height .6s var(--ease),opacity .4s ease,padding .6s var(--ease)}
+  .why-pil.acc .pil:not(.open) p{max-height:0;opacity:0;padding-top:0;padding-bottom:0}
+  .why-pil:not(.acc) .pil .pi::after{display:none}
+  .pil.open{background:linear-gradient(160deg,rgba(159,211,220,.16),rgba(255,255,255,.04));box-shadow:inset 0 0 0 1px rgba(159,211,220,.3),0 20px 40px -24px rgba(0,0,0,.8),0 0 40px -16px rgba(95,165,175,.45)}
+  .pil.open svg{color:#c3e3e8;background:rgba(159,211,220,.18)}
+  .pil.open .pi{color:#c3e3e8}
+  .pil.open .pi::after{rotate:225deg;margin-top:4px}
+}
+@media (max-width:900px){
+  .why-pil.io.acc .pil{transition-property:opacity,translate,scale,background,box-shadow;transition-duration:.7s,.9s,.25s,.5s,.5s;transition-timing-function:var(--ease),var(--ease),var(--ease),var(--ease),var(--ease)}
+}
+
+/* ── mobile carousels: premium story-style pager (rolling counter · title · segmented fill) ── */
+@media (max-width:900px){
+  .svc-dots.cpg,.ins-dots.cpg{display:flex;align-items:center;gap:16px;height:auto;padding:14px 18px;border-radius:20px;overflow:visible;
+    background:url(/images/grain.png) 0 0 / 160px 160px,linear-gradient(180deg,rgba(244,250,251,.9),rgba(225,241,243,.7));
+    box-shadow:inset 0 0 0 1px rgba(255,255,255,.8),0 0 0 1px rgba(43,99,107,.08),0 14px 30px -20px rgba(43,99,107,.45)}
+  .svc-dots.cpg{margin:22px 20px 0}
+  .cpg-n{flex:none;display:flex;align-items:baseline;gap:3px;font-variant-numeric:tabular-nums}
+  .cpg-roll{position:relative;display:inline-grid;overflow:hidden;height:1.05em;font-size:38px;line-height:1.05;font-weight:300;letter-spacing:-.05em}
+  .cpg-roll b{grid-area:1 / 1;font-weight:inherit;background:linear-gradient(180deg,var(--ink) 30%,var(--g4));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .cpg-t{font-size:12px;font-weight:500;letter-spacing:.06em;color:var(--ink2)}
+  .cpg-r{flex:1;min-width:0;display:flex;flex-direction:column;gap:10px}
+  .cpg-lbl{display:block;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;font-size:13px;font-weight:500;letter-spacing:-.005em;color:var(--ink)}
+  .cpg-segs{display:flex;gap:5px}
+  .cpg-segs i{position:relative;flex:1;height:3px;border-radius:3px;background:rgba(13,25,28,.1);overflow:hidden}
+  .cpg-segs b{position:absolute;inset:0;border-radius:inherit;background:linear-gradient(90deg,var(--g3),var(--g5));transform-origin:0 50%;transform:scaleX(0);box-shadow:0 0 8px rgba(90,158,168,.6)}
+  /* cards: the current one lifts and its photo slowly pushes in; the rest step back */
+  .cpg-on .card,.cpg-on > .art{transition:opacity .7s var(--ease),scale .7s var(--ease),filter .7s var(--ease),box-shadow .7s var(--ease)}
+  .cpg-on .card:not(.is-cur),.cpg-on > .art:not(.is-cur){opacity:.55;scale:.95;filter:saturate(.6)}
+  .cpg-on .card.is-cur{box-shadow:0 26px 50px -26px rgba(10,36,42,.6)}
+  .cpg-on .card > img,.cpg-on > .art .pimg img{scale:1;transition:scale 1s var(--ease)}
+  .cpg-on .card.is-cur > img,.cpg-on > .art.is-cur .pimg img{scale:1.09;transition:scale 5s linear}
+}

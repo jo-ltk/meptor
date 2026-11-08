@@ -9,8 +9,8 @@ export default function Testimonials() {
           <figure className="pimg tm-img rvc">
             <img
               decoding="async"
-              src="/images/placeholders/testimonial.svg"
-              alt="Smiling client or business owner portrait"
+              src="/images/photos/testimonial-portrait.jpg"
+              alt="Portrait of a confident smiling client"
             />
             <figcaption className="tm-chip">CLIENT FEEDBACK</figcaption>
           </figure>

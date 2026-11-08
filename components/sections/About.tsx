@@ -34,6 +34,13 @@ export default function About() {
             <div className="ab-stat rv">
               <span className="num">10+</span>
               <span className="lbl">YEARS OF COMBINED HR EXPERIENCE</span>
+              <ul className="ab-pts" aria-label="What we cover">
+                <li><span>01</span>Recruitment &amp; hiring</li>
+                <li><span>02</span>HR systems &amp; policies</li>
+                <li><span>03</span>Regulatory compliance</li>
+                <li><span>04</span>Training &amp; investigations</li>
+                <li className="ab-reg">Kerala · India · GCC</li>
+              </ul>
             </div>
             <div className="ab-text">
               <p className="lead rv">
@@ -85,15 +92,15 @@ export default function About() {
             <figure className="pimg ab-m1 rvc">
               <img
                 decoding="async"
-                src="/images/placeholders/about-1.svg"
-                alt="Modern office interior with glass, light and plants"
+                src="/images/photos/about-team-meeting.jpg"
+                alt="Smiling professional in a collaborative office meeting"
               />
             </figure>
             <figure className="pimg ab-m2 rvc">
               <img
                 decoding="async"
-                src="/images/placeholders/about-2.svg"
-                alt="Team collaborating at a desk or whiteboard"
+                src="https://images.unsplash.com/photo-1758873268695-1b55590e507a?auto=format&fit=crop&w=1800&q=80"
+                alt="Diverse team collaborating around a computer screen"
               />
             </figure>
           </div>

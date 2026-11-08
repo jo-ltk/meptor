@@ -14,22 +14,22 @@ export default function Hero() {
             <div className="hs-slide on">
               <img
                 decoding="async"
-                src="/images/placeholders/hero-1.svg"
-                alt="Hero slide 1 — portrait of a woman HR professional in a bright modern office"
+                src="/images/photos/hero-hr-conversation.jpg"
+                alt="HR consultant in a friendly conversation with a client at a meeting table"
               />
             </div>
             <div className="hs-slide">
               <img
                 decoding="async"
-                src="/images/placeholders/hero-2.svg"
-                alt="Hero slide 2 — small diverse team meeting in a glass office"
+                src="/images/photos/hero-team-glass.jpg"
+                alt="Team meeting in a glass-walled office"
               />
             </div>
             <div className="hs-slide">
               <img
                 decoding="async"
-                src="/images/placeholders/hero-3.svg"
-                alt="Hero slide 3 — handshake or interview moment between two professionals"
+                src="https://images.unsplash.com/photo-1758520144427-ddb02ac74e9d?auto=format&fit=crop&w=2400&q=80"
+                alt="Two professionals shaking hands across a desk after an interview"
               />
             </div>
           </div>
