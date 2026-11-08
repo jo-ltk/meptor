@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="1200" viewBox="0 0 2400 1200" font-family="Helvetica Neue, Helvetica, Arial, sans-serif">
-<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9dbcc0"></stop><stop offset=".55" stop-color="#6f969c"></stop><stop offset="1" stop-color="#3f656b"></stop></linearGradient>
-<pattern id="p" width="96.0" height="96.0" patternUnits="userSpaceOnUse"><path d="M96.0 0H0V96.0" fill="none" stroke="#ffffff" stroke-opacity=".08" stroke-width="1.8"></path></pattern>
-<radialGradient id="r" cx=".5" cy=".42" r=".6"><stop offset="0" stop-color="#ffffff" stop-opacity=".22"></stop><stop offset="1" stop-color="#ffffff" stop-opacity="0"></stop></radialGradient></defs>
-<rect width="2400" height="1200" fill="url(#g)"></rect><rect width="2400" height="1200" fill="url(#p)"></rect><rect width="2400" height="1200" fill="url(#r)"></rect>
-<rect x="24.0" y="24.0" width="2352.0" height="1152.0" rx="24.0" fill="none" stroke="#ffffff" stroke-opacity=".35" stroke-width="3.6" stroke-dasharray="24.0 16.8"></rect>
-<text x="1200.0" y="897.6" text-anchor="middle" font-size="24.0" font-weight="600" letter-spacing="3.84" fill="#ffffff" fill-opacity=".8">CONTACT · BACKGROUND</text>
-<text x="1200.0" y="948.0" text-anchor="middle" font-size="33.6" font-weight="500" letter-spacing="-0.672" fill="#ffffff">Bright, calm office lounge or soft blurred plants — light, empty centre</text>
-</svg>

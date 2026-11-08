@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1000" viewBox="0 0 1400 1000" font-family="Helvetica Neue, Helvetica, Arial, sans-serif">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9dbcc0"/><stop offset=".55" stop-color="#6f969c"/><stop offset="1" stop-color="#3f656b"/></linearGradient>
+<pattern id="p" width="80.0" height="80.0" patternUnits="userSpaceOnUse"><path d="M80.0 0H0V80.0" fill="none" stroke="#ffffff" stroke-opacity=".08" stroke-width="1.5"/></pattern>
+<radialGradient id="r" cx=".5" cy=".42" r=".6"><stop offset="0" stop-color="#ffffff" stop-opacity=".22"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></radialGradient></defs>
+<rect width="1400" height="1000" fill="url(#g)"/><rect width="1400" height="1000" fill="url(#p)"/><rect width="1400" height="1000" fill="url(#r)"/>
+<rect x="20.0" y="20.0" width="1360.0" height="960.0" rx="20.0" fill="none" stroke="#ffffff" stroke-opacity=".35" stroke-width="3.0" stroke-dasharray="20.0 14.0"/>
+<rect x="308.0" y="200.0" width="90.0" height="70.2" rx="12.600000000000001" fill="none" stroke="#ffffff" stroke-opacity=".85" stroke-width="6.0"/>
+<circle cx="353.0" cy="237.8" r="16.2" fill="none" stroke="#ffffff" stroke-opacity=".85" stroke-width="6.0"/>
+<rect x="363.8" y="191.0" width="19.8" height="10.799999999999999" rx="2.6999999999999997" fill="#ffffff" fill-opacity=".85"/>
+<text x="308.0" y="327.79999999999995" text-anchor="start" font-size="24.0" font-weight="600" letter-spacing="3.84" fill="#ffffff" fill-opacity=".8">INDUSTRY 03</text>
+<text x="308.0" y="387.79999999999995" text-anchor="start" font-size="40.0" font-weight="500" letter-spacing="-0.8" fill="#ffffff">Doctor or</text>
+<text x="308.0" y="436.59999999999997" text-anchor="start" font-size="40.0" font-weight="500" letter-spacing="-0.8" fill="#ffffff">nurse in a</text>
+<text x="308.0" y="485.4" text-anchor="start" font-size="40.0" font-weight="500" letter-spacing="-0.8" fill="#ffffff">bright clinic</text>
+<text x="308.0" y="553.9999999999999" text-anchor="start" font-size="22.0" font-weight="500" letter-spacing="1.3199999999999998" fill="#ffffff" fill-opacity=".7">min 1400 × 1000 px</text>
+</svg>
