@@ -854,6 +854,50 @@ html.lenis,html.lenis body{height:auto}
   .tm-btn:active,.hero-bar a:active{scale:.9;background:var(--bw-press);transition:scale .12s ease,background .12s ease}
 }
 
+/* ═════════════ MOBILE CARD GRIDS: industries + pillars as compact 2-column cards (≤900px only — desktop untouched) ═════════════ */
+.ind-m{display:none}
+@media (max-width: 900px) {
+  .deck{display:none}
+  .ind-m{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:36px}
+  .im-card{position:relative;isolation:isolate;overflow:hidden;display:flex;flex-direction:column;min-height:clamp(158px,46vw,230px);padding:16px 16px 17px;border-radius:22px;color:var(--ink);
+    background:linear-gradient(155deg,#f5fbfc 0%,#e3f2f4 52%,#cbe6eb 100%);
+    box-shadow:inset 0 0 0 1px rgba(255,255,255,.75),0 0 0 1px rgba(13,25,28,.05),0 16px 30px -22px rgba(10,36,42,.5)}
+  /* checkerboard rhythm: deep teal on the diagonal */
+  .im-card:nth-child(4n+2),.im-card:nth-child(4n+3){color:#eef7f8;background:linear-gradient(155deg,#457f88 0%,#2b636b 52%,#1b464d 100%);box-shadow:inset 0 0 0 1px rgba(255,255,255,.12),0 18px 32px -20px rgba(10,36,42,.65)}
+  .im-n{font-size:12px;font-weight:500;letter-spacing:.08em;font-variant-numeric:tabular-nums;opacity:.72}
+  .im-ic{position:absolute;top:12px;right:12px;display:grid;place-items:center;width:36px;height:36px;border-radius:12px;color:var(--g5);background:rgba(255,255,255,.7);box-shadow:inset 0 0 0 1px rgba(255,255,255,.9),0 2px 6px -2px rgba(10,36,42,.18)}
+  .im-card:nth-child(4n+2) .im-ic,.im-card:nth-child(4n+3) .im-ic{color:#d6eef1;background:rgba(255,255,255,.12);box-shadow:inset 0 0 0 1px rgba(255,255,255,.22)}
+  .im-art{position:absolute;z-index:-1;right:-16%;bottom:-6%;width:84%;height:auto;color:var(--g5);opacity:.13;pointer-events:none}
+  .im-card:nth-child(4n+2) .im-art,.im-card:nth-child(4n+3) .im-art{color:#fff;opacity:.11}
+  .im-t{margin-top:auto;padding-top:14px;max-width:11ch;font-weight:500;font-size:clamp(16px,4.7vw,20px);line-height:1.15;letter-spacing:-.025em}
+  .im-t::before{content:"";display:block;width:18px;height:2px;margin-bottom:10px;border-radius:2px;background:var(--g3)}
+
+  /* pillars: same 2-column grid instead of a sideways carousel */
+  .why-pil,.mp .why-pil{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:44px 0 0;padding:0;overflow:visible;scroll-snap-type:none;touch-action:auto;cursor:auto}
+  .why-dots{display:none !important}
+  .pil,.pil:nth-child(n){flex:none;min-height:0;gap:8px;padding:16px 14px 18px;border-radius:22px;transform:none;scroll-snap-align:none}
+  .pil svg{width:26px;height:26px}
+  .pil .pi{right:14px;top:16px}
+  .pil h3{margin-top:18px;font-size:clamp(15px,4.4vw,18px);line-height:1.18}
+  .pil p{font-size:13px;line-height:1.45}
+
+  /* scroll reveal (classes set by an IntersectionObserver in lib/motion.js; without JS / with reduced motion cards simply show) */
+  .ind-m.io .im-card,.why-pil.io .pil{opacity:0;translate:0 28px;transition:opacity .7s var(--ease),translate .9s var(--ease),scale .25s var(--ease);transition-delay:0s}
+  .ind-m.io .im-card.in,.why-pil.io .pil.in{opacity:1;translate:0 0;transition-delay:calc(var(--c,0) * 90ms)}
+  .im-card:nth-child(even),.pil:nth-child(even){--c:1}
+}
+@media (max-width: 360px) {
+  .ind-m,.why-pil{gap:8px}
+  .im-card{padding:14px 13px 15px;border-radius:20px}
+  .im-ic{top:10px;right:10px;width:32px;height:32px;border-radius:10px}
+  .pil,.pil:nth-child(n){padding:14px 12px 16px}
+  .pil p{font-size:12.5px}
+}
+@media (min-width: 600px) and (max-width: 900px) {
+  .ind-m{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .why-pil,.mp .why-pil{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
 @media (prefers-reduced-motion: reduce) {
   .mp *,.mp *::before,.mp *::after,.mp .why,.mp .nav{animation:none !important;transition-duration:.01s !important}
   .nav-bg{opacity:1}.nav{color:var(--ink)}

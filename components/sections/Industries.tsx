@@ -1,5 +1,17 @@
 import type React from "react";
 
+/* phones get their own compact 2-column grid (the desktop deck is hidden ≤900px) */
+const MOBILE: { t: string; ic: React.ReactNode }[] = [
+  { t: "IT & Technology", ic: <><path d="M10 12L24 24L38 10M24 24L16 38M24 24L36 34" /><circle cx="10" cy="12" r="3" /><circle cx="38" cy="10" r="3" /><circle cx="24" cy="24" r="4" /><circle cx="16" cy="38" r="3" /><circle cx="36" cy="34" r="3" /></> },
+  { t: "Retail & FMCG", ic: <><path d="M11 17h26l-2.5 23h-21z" /><path d="M18 17v-3a6 6 0 0 1 12 0v3" /></> },
+  { t: "Healthcare", ic: <><circle cx="24" cy="24" r="17" /><path d="M24 15v18M15 24h18" /></> },
+  { t: "Manufacturing", ic: <><circle cx="24" cy="24" r="7" /><circle cx="24" cy="24" r="14" /><path d="M24 4v6M24 38v6M4 24h6M38 24h6" /></> },
+  { t: "Hospitality", ic: <path d="M7 35h34M11 35a13 13 0 0 1 26 0M24 22v-4M21 18h6" /> },
+  { t: "Startups & SMEs", ic: <path d="M7 40h34M11 40v-9h6v9M21 40V23h6v17M31 40V13h6v27" /> },
+  { t: "Education", ic: <><path d="M24 14c-5-3-11-3-16-1v24c5-2 11-2 16 1 5-3 11-3 16-1V13c-5-2-11-2-16 1z" /><path d="M24 14v24" /></> },
+  { t: "GCC Companies", ic: <><circle cx="24" cy="18" r="7" /><path d="M5 34c6-5 12-5 19 0s13 5 19 0M5 41c6-4 12-4 19 0s13 4 19 0" /></> },
+];
+
 /* Industries — static markup; behaviour is attached by lib/motion.js */
 export default function Industries() {
   return (
@@ -549,6 +561,22 @@ export default function Industries() {
               />
             </article>
           </div>
+          <ul className="ind-m">
+            {MOBILE.map(({ t, ic }, i) => (
+              <li className="im-card" key={t}>
+                <span className="im-n">{String(i + 1).padStart(2, "0")}</span>
+                <span className="im-ic" aria-hidden="true">
+                  <svg viewBox="0 0 48 48" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+                    {ic}
+                  </svg>
+                </span>
+                <svg className="im-art" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  {ic}
+                </svg>
+                <h3 className="im-t">{t}</h3>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
     </>
