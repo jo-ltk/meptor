@@ -803,6 +803,56 @@ html.lenis,html.lenis body{height:auto}
   .ft ul a:active,.ft-kv a:active{color:var(--g5)}
 }
 
+/* ═════════════ MOBILE BUTTONS: one clean white-glass system (≤900px only — desktop untouched) ═════════════ */
+@media (max-width: 900px) {
+  .mp{--bw-bg:linear-gradient(180deg,rgba(255,255,255,.98),rgba(252,254,254,.9));
+    --bw-sh:inset 0 0 0 1px rgba(255,255,255,.9),inset 0 1px 0 #fff,0 0 0 1px rgba(13,25,28,.07),0 1px 2px rgba(13,25,28,.06),0 10px 24px -12px rgba(13,25,28,.28);
+    --bw-press:linear-gradient(180deg,rgba(244,249,250,.96),rgba(233,243,245,.88))}
+
+  /* every pill: white frosted glass, ink text, same size + shape everywhere */
+  .mp .gb,.mp .gb.pr,.mp .gb.dk,.mp .cta .gb:not(.pr){
+    height:54px;min-width:0;max-width:100%;padding:0 26px;gap:10px;border-radius:999px;
+    justify-content:center;text-align:center;font-size:15px;font-weight:500;line-height:1;letter-spacing:-.01em;color:var(--ink);
+    background:var(--bw-bg);box-shadow:var(--bw-sh);
+    -webkit-backdrop-filter:blur(16px) saturate(160%);backdrop-filter:blur(16px) saturate(160%);
+    touch-action:manipulation;-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none;-webkit-user-select:none;user-select:none;
+    transition:scale .22s var(--ease),background .22s ease,box-shadow .22s ease}
+  .mp .gb::before,.mp .gb::after{display:none}
+  .mp .gb > span:not(.ar){overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .mp .gb svg{flex:none;display:block}
+
+  /* label centred in the space beside the arrow; the arrow sits in its own disc on the right */
+  .mp .gb:has(.ar){padding:0 56px 0 22px}
+  .mp .gb .ar,.mp .gb.dk .ar{position:absolute;right:8px;top:50%;width:38px;height:38px;margin:-19px 0 0;border-radius:50%;color:var(--ink);
+    background:linear-gradient(180deg,#f3f9fa,#e3f0f2);box-shadow:inset 0 0 0 1px rgba(13,25,28,.06),0 1px 2px rgba(13,25,28,.1);transition:transform .3s var(--ease)}
+
+  /* layout per placement: nothing clipped, nothing crowded */
+  .hc-b{gap:10px 18px}
+  .hc-b .gb{flex:1 1 220px;max-width:320px;height:54px}
+  .ab-text .gb,.ins-head .gb{width:100%;max-width:420px}
+  .ins-head{gap:24px}
+  .cta .btns{gap:12px;padding:0 4px}
+  .cta .btns .gb,.cta .btns .gb:not(.pr){width:100%;height:54px;justify-content:center}
+  .sheet .gb{width:100%;height:54px;margin-top:20px}
+
+  /* menu toggle + small icon buttons share the same glass */
+  .mp .menu{width:48px;height:48px;padding:0;border-radius:16px;color:var(--ink)}
+  .tm-btn,.hero-bar a{background:var(--bw-bg);box-shadow:var(--bw-sh);color:var(--ink);touch-action:manipulation;-webkit-tap-highlight-color:transparent;transition:scale .22s var(--ease),background .22s ease}
+  .tm-btn{width:48px;height:48px}
+  .hero-bar a{width:44px;height:44px;border-radius:50%;-webkit-backdrop-filter:blur(16px) saturate(160%);backdrop-filter:blur(16px) saturate(160%)}
+  .tm-btn svg,.hero-bar a svg{display:block}
+}
+/* touch: quick press-in, no sticky hover states */
+@media (max-width: 900px) and (hover: none) {
+  .mp .gb:hover,.mp .gb.pr:hover{translate:none;box-shadow:var(--bw-sh)}
+  .mp .gb:hover .ar{transform:none}
+  .tm-btn:hover{background:var(--bw-bg);color:var(--ink)}
+  .mp .gb:active,.mp .gb.pr:active,.mp .gb.dk:active,.mp .cta .gb:not(.pr):active{scale:.965;border-radius:999px;background:var(--bw-press);box-shadow:inset 0 0 0 1px rgba(255,255,255,.8),0 0 0 1px rgba(13,25,28,.08),0 4px 12px -8px rgba(13,25,28,.3);transition:scale .12s ease,background .12s ease,box-shadow .12s ease}
+  .mp .menu:active{scale:.92;border-radius:16px}
+  .mp .gb:active .ar{transform:translateX(2px)}
+  .tm-btn:active,.hero-bar a:active{scale:.9;background:var(--bw-press);transition:scale .12s ease,background .12s ease}
+}
+
 @media (prefers-reduced-motion: reduce) {
   .mp *,.mp *::before,.mp *::after,.mp .why,.mp .nav{animation:none !important;transition-duration:.01s !important}
   .nav-bg{opacity:1}.nav{color:var(--ink)}
