@@ -661,8 +661,6 @@ html.lenis,html.lenis body{height:auto}
   .c-d,.card:hover .c-d,.card:focus-within .c-d{padding:0 8px 14px;font-size:14px}
   .c-more{padding:16px 16px 14px;-webkit-backdrop-filter:blur(12px) saturate(140%);backdrop-filter:blur(12px) saturate(140%)}
   .c-more ul{font-size:13.5px}
-  .svc-dots{display:block;position:relative;height:2px;margin:26px 20px 0;border-radius:2px;background:rgba(13,25,28,.1);overflow:hidden}
-  .svc-dots i{position:absolute;inset:0;background:var(--g4);transform-origin:0 50%;transform:scaleX(.18);box-shadow:0 0 10px rgba(90,158,168,.6)}
 
   /* why: same dark room, finger-driven torch, stats as a hero + pair */
   .why{margin:80px 8px 0;padding:96px 0 100px;border-radius:24px}
@@ -994,14 +992,25 @@ html.lenis,html.lenis body{height:auto}
     box-shadow:inset 0 0 0 1px rgba(255,255,255,.8),0 0 0 1px rgba(43,99,107,.08),0 14px 30px -20px rgba(43,99,107,.45)}
   .svc-dots.cpg{margin:22px 20px 0}
   .cpg-n{flex:none;display:flex;align-items:baseline;gap:3px;font-variant-numeric:tabular-nums}
-  .cpg-roll{position:relative;display:inline-grid;overflow:hidden;height:1.05em;font-size:38px;line-height:1.05;font-weight:300;letter-spacing:-.05em}
-  .cpg-roll b{grid-area:1 / 1;font-weight:inherit;background:linear-gradient(180deg,var(--ink) 30%,var(--g4));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .cpg-roll{position:relative;display:inline-flex;font-size:38px;line-height:1.05;font-weight:300;letter-spacing:-.05em}
+  /* one slot per digit: only the digit that changes moves, and it feathers out at the edges instead of being clipped */
+  .cpg-roll .dg{display:inline-grid;padding:.3em 0;margin:-.3em 0;
+    -webkit-mask-image:linear-gradient(180deg,transparent,#000 24%,#000 76%,transparent);mask-image:linear-gradient(180deg,transparent,#000 24%,#000 76%,transparent)}
+  .cpg-roll b{grid-area:1 / 1;will-change:transform,opacity;font-weight:inherit;background:linear-gradient(180deg,var(--ink) 30%,var(--g4));-webkit-background-clip:text;background-clip:text;color:transparent}
   .cpg-t{font-size:12px;font-weight:500;letter-spacing:.06em;color:var(--ink2)}
   .cpg-r{flex:1;min-width:0;display:flex;flex-direction:column;gap:10px}
   .cpg-lbl{display:block;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;font-size:13px;font-weight:500;letter-spacing:-.005em;color:var(--ink)}
   .cpg-segs{display:flex;gap:5px}
   .cpg-segs i{position:relative;flex:1;height:3px;border-radius:3px;background:rgba(13,25,28,.1);overflow:hidden}
   .cpg-segs b{position:absolute;inset:0;border-radius:inherit;background:linear-gradient(90deg,var(--g3),var(--g5));transform-origin:0 50%;transform:scaleX(0);box-shadow:0 0 8px rgba(90,158,168,.6)}
+  /* countdown ring: a glass disc whose rim fills over the dwell time */
+  .cpg-ring{position:relative;flex:none;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;
+    background:rgba(255,255,255,.6);box-shadow:inset 0 0 0 1px rgba(255,255,255,.9),0 8px 18px -10px rgba(43,99,107,.55)}
+  .cpg-rs{position:absolute;inset:0;width:100%;height:100%;transform:rotate(-90deg);overflow:visible}
+  .cpg-rs circle{fill:none;stroke-width:2}
+  .cpg-rs .trk{stroke:rgba(13,25,28,.08)}
+  .cpg-rs .arc{stroke-linecap:round;stroke-dasharray:100.53;stroke-dashoffset:100.53;opacity:0;filter:drop-shadow(0 0 3px rgba(90,158,168,.55))}
+  .cpg-arr{position:relative;width:13px;height:13px;color:var(--ink)}
   /* cards: the current one lifts and its photo slowly pushes in; the rest step back */
   .cpg-on .card,.cpg-on > .art{transition:opacity .7s var(--ease),scale .7s var(--ease),filter .7s var(--ease),box-shadow .7s var(--ease)}
   .cpg-on .card:not(.is-cur),.cpg-on > .art:not(.is-cur){opacity:.55;scale:.95;filter:saturate(.6)}

@@ -189,19 +189,41 @@ export default function Insights() {
           <div className="ins-dots cpg" aria-hidden="true">
             <span className="cpg-n">
               <span className="cpg-roll">
-                <b>01</b>
+                <span className="dg">
+                  <b>0</b>
+                </span>
+                <span className="dg">
+                  <b>1</b>
+                </span>
               </span>
               <span className="cpg-t">/03</span>
             </span>
             <span className="cpg-r">
               <span className="cpg-lbl">How to Reduce Recruitment Costs Without Compromising Hiring Quality</span>
-              <span className="cpg-segs">
-                {Array.from({ length: 3 }, (_, i) => (
-                  <i key={i}>
-                    <b />
-                  </i>
-                ))}
-              </span>
+            </span>
+            {/* countdown ring: fills over each card's dwell time, then the row glides on */}
+            <span className="cpg-ring">
+              <svg className="cpg-rs" viewBox="0 0 36 36">
+                <defs>
+                  <linearGradient id="cpgRingIns" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0" stopColor="var(--g3)" />
+                    <stop offset="1" stopColor="var(--g5)" />
+                  </linearGradient>
+                </defs>
+                <circle className="trk" cx="18" cy="18" r="16" />
+                <circle className="arc" cx="18" cy="18" r="16" stroke="url(#cpgRingIns)" />
+              </svg>
+              <svg
+                className="cpg-arr"
+                viewBox="0 0 16 16"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.6"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M3 8h10M9 4l4 4-4 4" />
+              </svg>
             </span>
           </div>
         </div>
