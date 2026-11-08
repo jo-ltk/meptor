@@ -886,6 +886,11 @@ html.lenis,html.lenis body{height:auto}
   .ind-m.io .im-card.in,.why-pil.io .pil.in{opacity:1;translate:0 0;transition-delay:calc(var(--c,0) * 90ms)}
   .im-card:nth-child(even),.pil:nth-child(even){--c:1}
 }
+/* "MEPTOR" outline behind the why section: centred by layout (the percentage translate is lost once GSAP takes over
+   transforms on phones) and sized to fit inside the section with room for its small scroll drift */
+@media (max-width: 900px) {
+  .wh-word{left:0;right:0;top:42%;display:flex;justify-content:center;margin-top:-.5em;translate:none;font-size:21vw}
+}
 @media (max-width: 360px) {
   .ind-m,.why-pil{gap:8px}
   .im-card{padding:14px 13px 15px;border-radius:20px}
