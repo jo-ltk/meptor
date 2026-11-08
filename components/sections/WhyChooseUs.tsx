@@ -143,6 +143,9 @@ export default function WhyChooseUs() {
               </p>
             </article>
           </div>
+          <div className="why-dots" aria-hidden="true">
+            <i />
+          </div>
           <div className="why-st">
             <div className="ws">
               <span className="ws-n">280+</span>
