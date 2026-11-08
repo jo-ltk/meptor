@@ -444,6 +444,7 @@ html.lenis,html.lenis body{height:auto}
   .card{width:82vw;height:auto;min-height:520px;display:flex;flex-direction:column;justify-content:flex-end;padding:150px 12px 12px}
   .c-d,.card:hover .c-d,.card:focus-within .c-d{position:static;opacity:1;translate:0 0;padding:0 10px 16px}
   .c-more{position:static;opacity:1;translate:0 0}
+  .c-d,.c-more{transition:none}
   .why{margin:100px 8px 0;padding:110px 0 120px;border-radius:22px}
   .why-pil{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin:64px calc(var(--gut) * -1) 0;padding:6px var(--gut) 20px;perspective:none}
   .pil,.pil:nth-child(n){flex:0 0 80%;scroll-snap-align:start;transform:none;min-height:270px}
